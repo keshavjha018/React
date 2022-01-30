@@ -1,8 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 
+// function based component
+let myname = "Keshav"
 function App() {
   return (
+    // JSX 
+    <>
+    <h1 className="name-heading"> My name is {myname} </h1>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +24,7 @@ function App() {
         </a>
       </header>
     </div>
+    </>
   );
 }
 
