@@ -40,6 +40,11 @@ export default function TextForm(props) {
     setText("");
   }
 
+  //copy to clipboard
+  const copy=() => {
+    navigator.clipboard.writeText(text);
+  }
+
   // Runs on change[input] - a text is entered by user
   const handleOnChange = (event) =>{
     setText(event.target.value);
@@ -57,11 +62,12 @@ export default function TextForm(props) {
         <button onClick={handleUpClick} className = "btn btn-success mx-2 my-2">To UpperCase</button>
         <button onClick={handleLowClick} className = "btn btn-success mx-2 my-2">To LowerCase</button>
         <button onClick={CamelCase} className = "btn btn-success mx-2  my-2">Upper Camel Case</button>
+        <button onClick={copy} className = "btn btn-warning mx-2">Copy All</button>
         <button onClick={clearText} className = "btn btn-warning mx-2">Clear Text</button>
         <hr />
     </div>
 
-    <div class="container my-4">
+    <div className="container my-4">
       <h4>Analysis of your Text</h4>
       {/* let wordCount = {} ; */}
       <b>
