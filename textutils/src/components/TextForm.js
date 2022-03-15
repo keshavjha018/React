@@ -55,7 +55,7 @@ export default function TextForm(props) {
     <div class="mb-3 container my-3">
         <h3>{props.heading}</h3>
         <div class="input-group">
-            <textarea value={text} onChange={handleOnChange} class="form-control" aria-label="With textarea"></textarea>
+            <textarea value={text} onChange={handleOnChange} className="form-control" aria-label="With textarea" style={{backgroundColor: props.mode==='dark'?'#1E1E28':'white', color: props.mode==='dark'?'white':'black' }}></textarea>
         </div>
         <br />
         {/*         runs handleUpClick function on btn click */}
