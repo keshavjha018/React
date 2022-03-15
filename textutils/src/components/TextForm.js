@@ -15,12 +15,14 @@ export default function TextForm(props) {
     //changing the state => after button click | (use this fun in btn)
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase", "success");
   }
 
   // FUN TO CONVERT TO LOWERCASE
   const handleLowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to LowerCase", "success");
   }
 
   // cap 1st letter
@@ -33,6 +35,7 @@ export default function TextForm(props) {
     }
     let newText = words.join(" ");
     setText(newText);
+    props.showAlert("Converted to CamelCase", "success");
   }
 
   //for text clear
@@ -43,6 +46,7 @@ export default function TextForm(props) {
   //copy to clipboard
   const copy=() => {
     navigator.clipboard.writeText(text);
+    props.showAlert("Copied to Clipboard !", "success");
   }
 
   // Runs on change[input] - a text is entered by user
