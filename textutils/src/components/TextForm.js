@@ -73,10 +73,10 @@ export default function TextForm(props) {
 
     <div className="container my-4">
       <h4>Analysis of your Text</h4>
-      {/* let wordCount = {} ; */}
       <b>
-      <p>Words: {text.split(" ").length} | Characters: {text.length} | Sentenses: {text.split('.').length - 1}</p>
-      <p>Reading Time: {0.008 * text.split(" ").length} Minutes.</p>
+        {/* if no text written -> words=0; else words = no of spaces */}
+      <p>Words: {text.length===0?0:text.split(" ").length} | Characters: {text.length} | Sentenses: {text.split('.').length - 1}</p>
+      <p>Reading Time: {text.length===0?0: 0.008 * text.split(" ").length} Minutes.</p>
       </b>
     </div>
 
