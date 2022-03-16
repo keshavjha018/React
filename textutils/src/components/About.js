@@ -5,7 +5,7 @@ export default function About(props) {
   return (
     <>
         <div className='container' style={{backgroundColor: props.mode==='dark'?'#1E1E28':'white', color: props.mode==='dark'?'white':'black' }}>
-            <hr />
+            <br />
             <b>ABOUT</b>
             <br />
             <br />

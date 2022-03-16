@@ -3,7 +3,14 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import { useState } from 'react'
+import React, { useState } from 'react'
+import {
+  BrowserRouter as Router,
+  // Switch,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
 
@@ -55,11 +62,22 @@ function App() {
   return (
     <>  {/* jsx fragment */}
 
+    <Router>
                   {/* passing props */}
-    <Navbar text="Play with TEXT" mode={mode} ChangeMode={ChangeMode} BtnText={BtnText} />
-    <TextForm showAlert={showAlert} heading = "Enter text to Operate" mode={mode} />
-    <About mode={mode} />
-    <Alert alert={alert} />
+      <Navbar text="Play with TEXT" mode={mode} ChangeMode={ChangeMode} BtnText={BtnText} />
+
+        <Routes>
+            <Route exact path="/"
+              element={<TextForm showAlert={showAlert} heading = "Enter text to Operate" mode={mode} />}
+              />
+
+            <Route exact path="/about"
+              element={<About mode={mode} />}
+              />
+        </Routes>
+
+        <Alert alert={alert} />
+    </Router>
     </>
   );
 }
