@@ -63,11 +63,11 @@ export default function TextForm(props) {
         </div>
         <br />
         {/*         runs handleUpClick function on btn click */}
-        <button onClick={handleUpClick} className = "btn btn-success mx-2 my-2">To UpperCase</button>
-        <button onClick={handleLowClick} className = "btn btn-success mx-2 my-2">To LowerCase</button>
-        <button onClick={CamelCase} className = "btn btn-success mx-2  my-2">Upper Camel Case</button>
-        <button onClick={copy} className = "btn btn-warning mx-2">Copy All</button>
-        <button onClick={clearText} className = "btn btn-warning mx-2">Clear Text</button>
+        <button disabled={text.length === 0} onClick={handleUpClick} className = "btn btn-success mx-1 my-1">To UpperCase</button>
+        <button disabled={text.length === 0} onClick={handleLowClick} className = "btn btn-success mx-1 my-1">To LowerCase</button>
+        <button disabled={text.length === 0} onClick={CamelCase} className = "btn btn-success mx-1  my-1">Upper Camel Case</button>
+        <button disabled={text.length === 0} onClick={copy} className = "btn btn-warning mx-1 my-1">Copy All</button>
+        <button disabled={text.length === 0} onClick={clearText} className = "btn btn-warning mx-1 my-1">Clear Text</button>
         <hr />
     </div>
 
@@ -75,7 +75,7 @@ export default function TextForm(props) {
       <h4>Analysis of your Text</h4>
       <b>
         {/* if no text written -> words=0; else words = no of spaces */}
-      <p>Words: {text.length===0?0:text.split(" ").length} | Characters: {text.length} | Sentenses: {text.split('.').length - 1}</p>
+      <p>Words: {text.split(" ").filter((element)=> {return element.length !==0}).length} | Characters: {text.length} | Sentenses: {text.split('.').length - 1}</p>
       <p>Reading Time: {text.length===0?0: 0.008 * text.split(" ").length} Minutes.</p>
       </b>
     </div>
