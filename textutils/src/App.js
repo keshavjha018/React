@@ -37,6 +37,8 @@ function App() {
       document.body.style.color = 'white';
 
       showAlert("Dark Mode Enabled", "success");
+      //dynamic title : Used for alerts i.e in fb no of Unread msg
+      document.title = 'PlayWithText - Dark Mode';
     }
     else{
       setmode('light');
@@ -45,6 +47,7 @@ function App() {
       document.body.style.color = 'black';
 
       showAlert("Dark Mode Disabled", "primary");
+      document.title = 'PlayWithText - Light Mode';
     }
   }
 
