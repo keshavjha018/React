@@ -62,7 +62,7 @@ export default function TextForm(props) {
             <textarea value={text} onChange={handleOnChange} className="form-control" aria-label="With textarea" style={{backgroundColor: props.mode==='dark'?'#1E1E28':'white', color: props.mode==='dark'?'white':'black' }}></textarea>
         </div>
         <br />
-        {/*         runs handleUpClick function on btn click */}
+        {/*       disabled if empty text    |   runs this function on btn click */}
         <button disabled={text.length === 0} onClick={handleUpClick} className = "btn btn-success mx-1 my-1">To UpperCase</button>
         <button disabled={text.length === 0} onClick={handleLowClick} className = "btn btn-success mx-1 my-1">To LowerCase</button>
         <button disabled={text.length === 0} onClick={CamelCase} className = "btn btn-success mx-1  my-1">Upper Camel Case</button>
@@ -75,8 +75,9 @@ export default function TextForm(props) {
       <h4>Analysis of your Text</h4>
       <b>
         {/* if no text written -> words=0; else words = no of spaces */}
-      <p>Words: {text.split(" ").filter((element)=> {return element.length !==0}).length} | Characters: {text.length} | Sentenses: {text.split('.').length - 1}</p>
-      <p>Reading Time: {text.length===0?0: 0.008 * text.split(" ").length} Minutes.</p>
+                     {/* /\s+/ is for counting whitespaces => spaces and newLines */}
+      <p>Words: {text.split(/\s+/).filter((element)=> {return element.length !==0}).length} | Characters: {text.length} | Sentenses: {text.split('. ').length - 1}</p>
+      <p>Reading Time: {text.length===0?0: 0.008 * text.split(/\s+/).filter((element)=> {return element.length !==0}).length} Minutes.</p>
       </b>
     </div>
 

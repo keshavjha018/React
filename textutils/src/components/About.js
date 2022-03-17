@@ -18,7 +18,7 @@ export default function About(props) {
                     </h2>
                     <div id="panelsStayOpen-collapseOne"  class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne" >
                     <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>This is a single page App built using <code>ReactJS</code>. </strong> <br/>This website offers many features to modify, manipulate & Improve your Text. And also helps you  as a counting meter for the text provided by showing Stats like <code>Total Words</code>, <code>Character Count</code> , <code>Sentences count</code> and <code>Reading Time</code>. 
                     </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ export default function About(props) {
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>Hi there ! <br /> I am Keshav. </strong> IInd year student of Computer Science at IIIT Dharwad. This was my first React App. 
                     </div>
                     </div>
                 </div>
