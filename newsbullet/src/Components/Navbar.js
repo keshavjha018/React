@@ -7,7 +7,7 @@ export class Navbar extends Component {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
             <a className="navbar-brand" href="/">
-            <img src={logo} alt="" width="50" height="40" class="d-inline-block align-text-top mx-2" />
+            <img src={logo} alt="" width="50" height="40" className="d-inline-block align-text-top mx-2" />
             NEWS BULLET</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@ export class Navbar extends Component {
                 </ul>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a className="nav-link disabled" href="/" tabIndex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
             <form className="d-flex">

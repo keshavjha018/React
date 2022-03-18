@@ -40,6 +40,7 @@ export class News extends Component {
             articles: [],
             loading: false,             // if data is being loaded => loading state
                                         // can be used to set a loading spinner
+            page:1
         }
     }
 
@@ -48,10 +49,42 @@ export class News extends Component {
     // and will fetch articles from API and fill the articles Array
     async componentDidMount() {
         // async-await is fun type. Used to waits for promises to resolve(here waits for api to be fetched)
-        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=96317f42ab2442fdb411d6a85f8007bf";
+        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=96317f42ab2442fdb411d6a85f8007bf&pageSize=20";
         let data = await fetch(url);            // fetching url
         let parsedData = await  data.json()     //parsing data
-        this.setState({articles: parsedData.articles})  //updating article array with parsed articles
+        this.setState({ articles: parsedData.articles,
+                        totalResults: parsedData.totalResults
+                    })  //updating article array with parsed articles
+    }
+
+    handlePrevClick = async () => {
+        console.log("Prev Button Clicked !");
+
+        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=96317f42ab2442fdb411d6a85f8007bf&page=${this.state.page - 1}&pageSize=20`;
+        let data = await fetch(url);
+        let parsedData = await  data.json() 
+
+        this.setState({
+            page: this.state.page - 1,
+            articles: parsedData.articles
+        })
+    }
+    handleNextClick = async () => {
+        console.log("Next button Clicked !");
+
+        if(this.state.page + 1 > Math.ceil(this.state.totalResults/20)){
+
+        }
+        else{
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=96317f42ab2442fdb411d6a85f8007bf&page=${this.state.page + 1}&pageSize=20`;
+            let data = await fetch(url);
+            let parsedData = await  data.json() 
+
+            this.setState({
+                page: this.state.page + 1,
+                articles: parsedData.articles
+            })
+        }
     }
 
     render() {
@@ -69,7 +102,13 @@ export class News extends Component {
                         </div>
                     })}
 
-                </div> 
+                </div>
+                <hr />
+                <div className='container d-flex justify-content-between'>
+                    {/* if current page <=1 disable prev button  */}
+                    <button disabled={this.state.page<=1} type="button" onClick={this.handlePrevClick} className="btn btn-info"> &larr; Prev.</button>
+                    <button type="button" onClick={this.handleNextClick} className="btn btn-info">Next &rarr;</button>
+                </div>
             </div>
         )
     }
