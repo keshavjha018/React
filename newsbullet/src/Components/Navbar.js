@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {Component} from 'react'
 import logo from '../logo.png';
 
-export default function Navbar() {
-  return (
+export class Navbar extends Component {
+  render () {
+    return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
             <a className="navbar-brand" href="/">
@@ -41,5 +42,8 @@ export default function Navbar() {
             </div>
         </div>
     </nav>
-  )
+    )
+  }
 }
+
+export default Navbar
