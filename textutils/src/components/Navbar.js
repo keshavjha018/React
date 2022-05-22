@@ -19,6 +19,12 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/jokes">Jokes</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/pics">Pics</Link>
+            </li>
           </ul>
                                                               {/* if mode=light => text color=dark, else light */}
           <div class={`form-check form-switch container text-${props.mode === 'light'?'dark':'light'} mx-3`}>

@@ -1,6 +1,8 @@
 import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
+import Jokes from './components/Jokes';
+import Pics from './components/Pics';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React, { useState } from 'react'
@@ -8,8 +10,7 @@ import {
   BrowserRouter as Router,
   // Switch,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -73,6 +74,14 @@ function App() {
 
             <Route exact path="/about"
               element={<About mode={mode} />}
+              />
+
+            <Route exact path="/jokes"
+              element={<Jokes mode={mode} />}
+              />
+
+            <Route exact path="/pics"
+              element={<Pics mode={mode} />}
               />
         </Routes>
 
